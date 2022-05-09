@@ -18,113 +18,76 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    <header class="bg-primary">
-        <h1 class="restaurant-name-large row">Italian Food</h1>
-    </header>
-    <section class="container content-section">
-        <h2 class="section-header row">Entrees</h2>
-        <div class="food-items row">
-            <div class="food-item col-6">
-                <span class="food-item-title">Pizza</span>
-                <img class="food-item-image img-responsive" src="images/pranjall-kumar-DgY-LbtESNw-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$14.99</span>
-                    <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="food-item col-6">
-                <span class="food-item-title">Pasta</span>
-                <img class="food-item-image img-responsive" src="images/jasbir-s-bhatia-2Djzc4AOqxs-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$13.99</span>
-                    <button class="btn btn-primary food-item-button"type="button">ADD TO CART</button>
-                </div>
-            </div>
-          </div>
-          <div class="food-items row">
-            <div class="food-item col-6">
-                <span class="food-item-title">Soup</span>
-                <img class="food-item-image img-responsive" src="images/roni-herdyanzah-vrX8M4Plu8U-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$9.99</span>
-                    <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="food-item col-6">
-                <span class="food-item-title">Salad</span>
-                <img class="food-item-image img-responsive" src="images/farhad-ibrahimzade-D-domDrwOaQ-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$12.99</span>
-                    <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row bg-grey">
+        <div class="col-12 text-center">
+          <h1>Shopping Cart</h1>
         </div>
-    </section>
-    <section class="container content-section">
-        <h2 class="section-header">Drinks</h2>
-        <div class="food-items row">
-            <div class="food-item col-4">
-                <span class="food-item-title">Tea</span>
-                <img class="food-item-image" src="images/petr-sidorov-cVqKug6ZN6Q-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$1.99</span>
-                    <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="food-item col-4">
-                <span class="food-item-title">Coffee</span>
-                <img class="food-item-image" src="images/ben-kolde-D2wlfdxKGQU-unsplash.jpg">
-                <div class="food-item-details">
-                    <span class="food-item-price">$2.99</span>
-                    <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="food-item col-4">
-              <span class="food-item-title">Soda</span>
-              <img class="food-item-image" src="images/ravi-sharma-nWCmjC7dmdo-unsplash.jpg">
-              <div class="food-item-details">
-                  <span class="food-item-price">$2.50</span>
-                  <button class="btn btn-primary food-item-button" type="button">ADD TO CART</button>
-              </div>
-          </div>
+        <div class="col-12 bg-info">
+          <table class="table table-responsive table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Price ($)</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Subtotal ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="item">Mango</td>
+                <td class="price">$4.00</td>
+                <td class="quantity">
+                  <label>QTY</label><input type="number" min="0" value="1" />
+                  <button class="btn btn-danger btn-sm remove">
+                    &#10005;
+                  </button>
+                </td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item">Rice</td>
+                <td class="price">$15.00</td>
+                <td class="quantity">
+                  <label>QTY</label><input type="number" min="0" value="2" />
+                  <button class="btn btn-danger btn-sm remove">
+                    &#10005;
+                  </button>
+                </td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item">Eggs(Dozen)</td>
+                <td class="price">$5.00</td>
+                <td class="quantity">
+                  <label>QTY</label><input type="number" min="0" value="1" />
+                  <button class="btn btn-danger btn-sm remove">
+                    &#10005;
+                  </button>
+                </td>
+                <td class="subtotal"></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </section>
-    <section class="container content-section">
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        <div class="col">
+          <form class="col" id="addItem">
+            <input class="item" type="text" placeholder="Item" />
+            <input
+              class="price"
+              type="number"
+              placeholder="00.00"
+              step=".01"
+              min="0"
+            />
+            <button class="btn btn-primary btn-sm add">Add</button>
+          </form>
         </div>
-        <div class="cart-items">
-            <div class="cart-row">
-                <div class="cart-item cart-column">
-                    <img class="cart-item-image" src="images/pranjall-kumar-DgY-LbtESNw-unsplash.jpg" width="100" height="100">
-                    <span class="cart-item-title">Pizza</span>
-                </div>
-                <span class="cart-price cart-column">$14.99</span>
-                <div class="cart-quantity cart-column">
-                    <input class="cart-quantity-input" type="number" value="1">
-                    <button class="btn btn-danger" type="button">REMOVE</button>
-                </div>
-            </div>
-            <div class="cart-row">
-                <div class="cart-item cart-column">
-                    <img class="cart-item-image" src="images/ravi-sharma-nWCmjC7dmdo-unsplash.jpg" width="100" height="100">
-                    <span class="cart-item-title">Soda</span>
-                </div>
-                <span class="cart-price cart-column">$2.50</span>
-                <div class="cart-quantity cart-column">
-                    <input class="cart-quantity-input" type="number" value="2">
-                    <button class="btn btn-danger" type="button">REMOVE</button>
-                </div>
-            </div>
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$39.97</span>
-        </div>
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-    </section>
-</body>
+      </div>
+      <div class="row bg-success text-right">
+          <h2 style="margin-right:10px">Total Price:</h2>
+          <h2 id="totalCart">$</h2>
+      </div>
+    </div>
+  </body>
 </html>
