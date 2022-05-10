@@ -5,6 +5,10 @@
 .btn-primary{
   margin-left: 10px;
 }
+.btn-danger{
+  font-weight: bold;
+}
+
 /* Table */
 .quantity {
   font-weight: bold;
@@ -23,6 +27,11 @@
 .item {
   margin-right: 10px;
 }
+
+/* Total*/
 h2 {
   display: inline-flex;
+}
+#totalCart {
+  margin-right: 10px;
 }
